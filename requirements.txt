@@ -1,0 +1,12 @@
+streamlit
+pandas
+scikit-learn
+folium
+streamlit-folium
+transformers
+torch
+stanza
+geopy
+speechrecognition
+matplotlib
+opencv-python
