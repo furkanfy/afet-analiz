@@ -5,7 +5,7 @@ import pandas as pd
 from geopy.distance import geodesic
 import sys
 sys.path.append('C:\\Users\\ASUS\\Documents\\afet-analiz')
-from streamlit_app.utils.map_utils import lat_lon_bul_fast
+from utils.map_utils import lat_lon_bul_fast
 
 
 def show_help_section(all_data):

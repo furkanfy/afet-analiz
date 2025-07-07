@@ -15,7 +15,7 @@ from utils.pipeline import process_dataframe
 
 from utils.map_utils import lat_lon_bul_fast, create_map, filter_by_date, filter_by_label
 
-from streamlit_app.utils.map_utils import lat_lon_bul_fast, create_map, filter_by_date, filter_by_label
+from utils.map_utils import lat_lon_bul_fast, create_map, filter_by_date, filter_by_label
 
 
 # Telegram mesajlarının CSV dosya yolu
