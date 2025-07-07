@@ -11,8 +11,8 @@ from geopy.distance import geodesic
 
 # Yol ayarları
 sys.path.append('C:\\Users\\ASUS\\Documents\\afet-analiz')
-from streamlit_app.utils.pipeline import process_dataframe
-from streamlit_app.utils.map_utils import lat_lon_bul_fast, create_map, filter_by_date, filter_by_label
+from utils.pipeline import process_dataframe
+from utils.map_utils import lat_lon_bul_fast, create_map, filter_by_date, filter_by_label
 
 # Telegram mesajlarının CSV dosya yolu
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -99,6 +99,6 @@ if not all_data.empty:
 else:
     st.info("Henüz gösterilecek birleşik afet verisi yok.")
 
-from streamlit_app.utils.help_view import show_help_section
+from utils.help_view import show_help_section
 if not all_data.empty:
     show_help_section(all_data)
