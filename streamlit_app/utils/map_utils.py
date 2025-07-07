@@ -35,6 +35,29 @@ label_colors = {
 def lat_lon_bul_fast(sehir):
     return sehir_koordinat.get(sehir, (None, None))
 
+
+def create_map(df_filtered):
+    m = folium.Map(location=[39, 35], zoom_start=6)
+    for _, row in df_filtered.dropna(subset=["lat", "lon"]).iterrows():
+        source = row.get("source", "Bilinmiyor")
+        popup = folium.Popup(
+            f"<b>Şehir:</b> {row['city']}<br>"
+            f"<b>Etiket:</b> {row['label']}<br>"
+            f"<b>Kaynak:</b> {source}<br>"
+            f"<b>İçerik:</b> {row['content'][:150]}",
+            max_width=300
+        )
+        folium.Marker(
+            location=[row["lat"], row["lon"]],
+            popup=popup,
+            icon=folium.Icon(color=label_colors.get(row["label"], "gray"))
+        ).add_to(m)
+    return m
+
+
+
+
+'''
 def create_map(df_filtered):
     m = folium.Map(location=[39, 35], zoom_start=6)
     for _, row in df_filtered.dropna(subset=["lat", "lon"]).iterrows():
@@ -47,7 +70,7 @@ def create_map(df_filtered):
             icon=folium.Icon(color=label_colors.get(row["label"], "gray"))
         ).add_to(m)
     return m
-
+'''
 from datetime import datetime, timedelta
 import streamlit as st
 import pandas as pd
@@ -89,6 +112,18 @@ def filter_by_date(df, st):
     df['lon'] = df['city'].apply(lambda x: lat_lon_bul_fast(x)[1])
     return df
 
+
+def filter_by_label(df, st):
+    unique_labels = df['label'].dropna().unique().tolist()
+    selected = st.multiselect("Gösterilecek etiketler:", options=unique_labels, default=unique_labels)
+    return df[df['label'].isin(selected)]
+
+
+
+
+
+
+
 '''
 def filter_by_date(df, st):
     if 'date' in df.columns:
@@ -100,7 +135,3 @@ def filter_by_date(df, st):
         df = df[(df['date'].dt.date >= date_range[0]) & (df['date'].dt.date <= date_range[1])]
     return df
 '''
-def filter_by_label(df, st):
-    unique_labels = df['label'].dropna().unique().tolist()
-    selected = st.multiselect("Gösterilecek etiketler:", options=unique_labels, default=unique_labels)
-    return df[df['label'].isin(selected)]

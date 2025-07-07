@@ -1,5 +1,6 @@
 timestamp,city,label,content
-2025-07-01T15:57:45.801310,Kastamonu,other,kastamonu
-2025-07-01T15:57:53.758856,Kastamonu,yangın,kastamonu yangın var
 2025-07-01T16:00:12.622687,İzmir,yangın,izmirde yangın var
 2025-07-01T16:27:03.030794,İstanbul,su,istanbul su yok
+2025-07-04T11:46:32.090350,İstanbul,yangın,istanbulda yangın var
+2025-07-04T11:52:02.878267,İzmir,su,izmirde su eksik
+2025-07-07T14:56:07.703446,İzmir,yangın,izmirde yangın var
