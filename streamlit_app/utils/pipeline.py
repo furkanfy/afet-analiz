@@ -1,9 +1,9 @@
 import sys
 sys.path.append('C:\\Users\\ASUS\\Documents\\afet-analiz')
 
-from streamlit_app.utils.text_cleaning import clean_text
-from streamlit_app.utils.city_detection import extract_city
-from streamlit_app.utils.label_detection import detect_label
+from utils.text_cleaning import clean_text
+from utils.city_detection import extract_city
+from utils.label_detection import detect_label
 
 def process_dataframe(df):
     df['content'] = df['content'].apply(clean_text)
