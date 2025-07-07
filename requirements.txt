@@ -4,3 +4,4 @@ streamlit-folium
 folium
 geopy
 python-dotenv
+streamlit-autorefresh
