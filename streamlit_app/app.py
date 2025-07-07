@@ -11,7 +11,7 @@ from geopy.distance import geodesic
 
 # Yol ayarları
 sys.path.append('C:\\Users\\ASUS\\Documents\\afet-analiz')
-from streamlit_app.utils.pipeline import process_dataframe
+from utils.pipeline import process_dataframe
 from streamlit_app.utils.map_utils import lat_lon_bul_fast, create_map, filter_by_date, filter_by_label
 
 # Telegram mesajlarının CSV dosya yolu
